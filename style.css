@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .under_line {
+        @apply relative;
+    }
+
+    .under_line::after {
+        @apply content-[''] w-full border-solid border-b-[1.5px] absolute left-0 bottom-0 scale-x-0 origin-right transition ease-in-out transform duration-[.3s]
+    }
+
+    .under_line:hover::after {
+        @apply scale-x-[1] origin-left
+    }
+
+    .bg-custom {
+        @apply after:content-[''] after:invert after:bg-[url('https://cdn.dribbble.com/users/1733140/screenshots/6293156/bricsys_city_4x.png?resize=1000x750&vertical=center')] after:w-full after:h-full after:opacity-[.1] after:absolute after:bg-no-repeat after:bg-top after:top-0 after:left-0 after:bg-cover
+    }
+
+    .swiper {
+        @apply w-full h-auto;
+    }
+}
